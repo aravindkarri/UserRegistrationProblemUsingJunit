@@ -9,8 +9,16 @@ public class UserValidator
 
 	public boolean validateFirstName(String firstName)
 	{
+		return validateName(firstName);
+	}
+	public boolean validateLastName(String lastName)
+	{
+		return validateName(lastName);
+	}
+	public boolean validateName(String name)
+	{
 		Pattern pattern = Pattern.compile(NAME_PATTERN);
-		Matcher matcher = pattern.matcher(firstName);
+		Matcher matcher = pattern.matcher(name);
 		return matcher.matches();
 	}
 }
